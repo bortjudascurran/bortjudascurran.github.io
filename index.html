@@ -1,228 +1,124 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <!--meta information-->
-    <!--HMTL COMMENTS <p>Hello
-    <b>This is bold!</b>
-    <i>This is italics!</i>
-    <u> This is underline!</u>
-    <b>Bold and <i> also italics!</i></b></p>-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <div id ="Norah">This is a div tag! It divides the page into sections</div> <!--Add an ID in a div tag-->
+<body id="bodycolor" class="background-black">
+    <div id="displaytext" class="text-white">
+    <p>
+        
+    </p>
+    </div>
+    <script>
+        function wbDisplay()
+        {
+            //changes display to white background black text
+            var background = document.querySelector("#bodycolor")
+            background.classList.replace("background-black","background-white")
+            var text = document.querySelector("#displaytext")
+            text.classList.replace("text-white","text-black")
+        }
 
-    <div id = "infinitegaze"> <b><u><p>INFINITE GAZE: A story told in discrepancies</u></b></p></div>
+        function bwDisplay()
+        {
+            //changes display to white background black text
+            var background = document.querySelector("#bodycolor")
+            background.classList.replace("background-white","background-black")
+            var text = document.querySelector("#displaytext")
+            text.classList.replace("text-black","text-white")
+        }
 
-    <div id ="Story"><p> this is where the story goes. if this text displays something is wrong.</p> </div>
+        function letterAdd(letter)
+        {
+            var displaytext = document.querySelector("#displaytext p");
+            displaytext.textContent+=letter;
+        }
 
-<script>
- //This is how you send a script to the js console
-let x = 5
- //console.log() is how you do a print function in js
- //prints to console
-console.log(x)
-console.log("Hello!")
+        function typewriter(text)
+        {
+        
+            for (let n = 0; n <= text.length; n++)
+                {
+                    let letter = text.charAt(n)
+                    console.log(letter)
+                    setTimeout(
+                        function()
+                        {
+                            letterAdd(letter);
+                        }
+                        , 50*n);//makes each char appear 1/50 sec after prev
+                }
+                console.log(text.length/50)
+        }
 
-let foods = ["apple", "banana", "cherry"]
-//list-- square brackets
-console.log(foods)
-console.log(foods[0])
-//inside square brackets is the index
-//start counting from zero because, like numbers on a ruler
-//index numbers refer to a "physical" memory space
-
-//object- equivalent to dictionary in python 
-let info = {"Name":"Norah", "Age:": 21, "Student":true}
-//index:value pairs separated by comma
-//indexing data must be a string
-//corresponding data can be any info type
-console.log(info)
-console.log("Age")
-// lists are just objects with numerical indexes 
-
-//functions for calculations, return value
-let addThree = function(x)
-{
-    //specify output with return
-    return x+3
-}
-
-console.log(addThree(5))
-console.log(addThree("cat"))
-//js will interpret this as string containing "3" and concatenate
-//in js, 1/0=Infinity and 1/Infinity=0 
-
-//function that does things with no return value
-//functions to return a task
-let sayHello = function(name)
-{
-    console.log("Hello, " + name)
-}
-// save time by eliminating repeated code
-sayHello("Alice")
-sayHello("Bob")
-sayHello("Charlene")
-
-//objects, dictionaries, lists are all "data structures"
-//contain a bunch of data in a structured way
-//Class = a data structure with some functionality built into it
-
-// access data from an object using either dot or bracket notation
-console.log(info["Age"])
-console.log(info.Age)
-
-//can also add extra data later on
-info["Height"] = 6
-console.log(info)
-
-//can even add functions
-
-info["SayGoodbye"] = function()
-{
-    console.log("Goodbye!")
-}
-console.log(info)
-info.SayGoodbye()
-
-//adding a function to an object makes that a class
-//SayGoodbye is stored in the info class, only used in reference to it 
-
-//absence of value is denoted in different data types
-console.log(0=="") //=true
-console.log(3=="3") //=true
-
-//logic gates in computers have to do with the
-//electrical patterns of computers that correspond to
-//and, or, not
-
-//and, or, not notation disjunctive normal form
-
-//if you understand logic you understand circuits
-//from nand to tetris, building a computer from 
-//first principles
-
-//JS has an object defined called document (each webpage has an object called document that stores info about the page and has functions to change it)
-
-//self editing objects
-
-let box = document.getElementById("Norah")
-//document is an object containing all info about webpage
-//getelementbyID is a function that grants access to something, in this case the div tag "Norah"
-//assigning to variable box is what lets us perform operations on that function 
-//document = "I", the self (Kierkegaard)
-box.innerText = "Hello!"
-
-//Math.random() will make a random decimal number between 0 and 1
-//Multiplying by 5 will generate a random number between 0 and 5
-//Calls on the math object which has a bunch of mathy stuff
-let r = 5 * Math.random();
-box.innerText = r
-//by selecting random numbers we can have webpages that do something different every time 
-
-//to generate a random sentence, use the random numbers as indexes for a list/array
-
-let adjectives = [ "red", "nice", "blue", "cold", "big", "small"]
-
-//I want to use the random numbers as indexes for the array, but index numbers are whole
-
-//round to a whole number
-let i = Math.round(r) 
-// select a word from the list above
-
-let word = adjectives[i] //parenthesis for functions, brackets for arrays
-//This is indexing through the list of adjectives above 
-
-//write a sentence using the word
-let sentence = "That is a " + word + " polar bear!"
-
-//with only 5, you will sometimes insert undefined if it goes above the index 
-//value of the array (if the number rounds up to the number
-//5 [which is the sixth position in the array beause arrays begin at zero])
-//which is possible because the random number between 0 and 1 is being multiplied by 5
-//so something that multiplies to 4.9 will become 5 
-
-box.innerText = sentence
-
-////////////////////////////////////////
-//Story Assignment
-
-//My lover and I meet one another/each other in every universe/world/dimension/reality. 
-//Our story always changes/cannot stay the same/is different every time. 
-//In one, I am a butterfly/leaf/breeze/hawk and they are a moth/tree/ray of light/cloud in the sky.
-//In another, we have (random number 2-7) children. She is an alien and I am an alien too/a 
-//rock on her planet/an astronaut/the galaxy she lives in. He is a mathematician and I am 
-//zero/infinity/number theory/ennumerability/recursion/a computer. No matter who/what/how, 
-//no matter how we meet/come to love each other/find each other, no matter how the story changes,
-// we love each other. Our love is not in our bodies. Our love is not in our circumstances. 
-//Our love is not in our emotions, in our children, in our 
-//home/city/biology/marriage/minds/planet/physics. It is not even in who we are.
-// Our love is in the story we create together, 
-//our eyes always finding one another, looking and looking and looking at one another 
-//until together we have lived every life in each others's infinite gaze. 
-
-let story = document.getElementById("Story")
-
-//Set up sentence by sentence
-//List of lists of words 
-//Every time it gets to the variable, it knows to multiply the random number
-//only by how many index values there are in the list
-
-let word0=["one another","each other","the other"]//2
-let word1=["universe","world","dimension","reality"]//3
-let word2=["changes","cannot stay the same", "is different every time"]//2
-let word3=["butterfly","leaf","breeze","hawk"]//3
-let word4=["moth","tree","ray of light","cloud in the sky"]//3
-let word5=["seven","no","infinite","three"]//3
-let word6=["an alien too", "a rock on her planet","an astronaut","the galaxy she lives in"]//3
-let word7=["zero","infinity","number theory","ennumberability","recursion","a computer"]//5
-let word8=["who we are","what we are","how we are made"]//2
-let word9= ["meet","come to love each other","find each other"]//2
-let word10=["home","city","biology","marriage","minds","planet","physics"]//6
-let wordvaribles =[word0,word1,word2,word3,word4,word5,word6,word7,word8,word9,word10]//10
-//QUESTION: How can I make an object out of this? It seems wrong that I would manually make an array of arrays
-//let generateWords = function(x){
-    // x is a list of variables containing arrays of variable words, or an object(?) a class?
-    //loop that iterates through the length of that array
-    //for each array represented iterating through that
-    //selecting a random number by multiplying random by index length 
-
-//get a list of randomly selected numbers from each word's index 
-let indexnumbers=[2,2,1,2,2,3,2,4,2,2,5]
-let randomnumbers=[]
-for (let i = 0; i < 11; i++){ 
-    randomnumber = Math.random() * indexnumbers[i]
-    randomnumbers.push(Math.round(randomnumber))
-}
-console.log(randomnumbers)
-
-//make the text constant in the constant places and variable select in the variable places
-//new array of each array with positionality indicated
-
-let position =[word0[randomnumbers[0]],word1[randomnumbers[1]],word2[randomnumbers[2]],
-    word3[randomnumbers[3]],word4[randomnumbers[4]],word5[randomnumbers[5]],word6[randomnumbers[6]],
-    word7[randomnumbers[7]],word8[randomnumbers[8]],word9[randomnumbers[9]],word10[randomnumbers[10]]]
+    setTimeout(function()
+        {
+            typewriter("Is.")
+        },1000)
+        //without having a time set for this it will show up upon load, setting a timeout here makes it show up as different sentences
+        //setTimeout(wbDisplay,2000)
+    setTimeout(function()
+        {
+            typewriter(" Is not.")
+        },2000)
+    setTimeout(function()
+        {
+            typewriter(" Is.")
+        },3000)
+    setTimeout(function()
+        {
+            typewriter(" Is not.")
+        },4000)
+    setTimeout(function()
+        {
+            typewriter(" A mug is not a map. A map is not a country. A country is not a person.")
+        },5000)
+     setTimeout(function()
+        {
+            typewriter(" A mug is a mug. A map is a map. A country is a country. A person is a person.")
+        },10000)
+    setTimeout(function()
+        {
+            typewriter(" A person is also an I.")
+        },15000)
+    setTimeout(function()
+        {
+            typewriter(" I is not defined yet.")
+        },19000)
+    setTimeout(function()
+        {
+            typewriter(" I is not a mug. I is not a map. I is not a country.")
+        },22000)
+    setTimeout(function()
+        {
+            typewriter(" An I is to can: I can see, I can feel, I can kick, I can.")
+        },28000)
+    setTimeout(function()
+        {
+            typewriter(" I also is to am.")
+        },32000)
+    setTimeout(function()
+        {
+            typewriter(" To am is to be. To be is to is.")
+        },34000)
+    setTimeout(function()
+        {
+            typewriter(" But to is is not to am.")
+        },36000)
+    setTimeout(function() {
+         document.querySelector("#displaytext p").textContent = "";
+        }, 40000);
+    setTimeout(wbDisplay, 41000);
+    setTimeout(function()
+        {
+            typewriter( "I am is not I is.")
+        },44000)
+    
 
 
-// No matter who/what/how, 
-//no matter how we meet/come to love each other/find each other, no matter how the story changes,
-// we love each other. Our love is not in our bodies. Our love is not in our circumstances. 
-//Our love is not in our emotions, in our children, in our 
-//home/city/biology/marriage/minds/planet/physics. It is not even in who we are.
-// Our love is in the story we create together, 
-//our eyes always finding one another, looking and looking and looking at one another 
-//until together we have lived every life in each others's infinite gaze. 
-
-story.innerText = "My lover and I meet " + position[0] + " in every " + position[1] + ". Our story "
-                    + position[2] + ". In one, I am a " + position[3] + " and they are a " + position[4]
-                    + ". In another, we have " + position[5] + " children. In one, he is an alien and I am "
-                    + position[6] + ". In another, she is a mathematician and I am " + position[7] + 
-                    ". No matter " + position[8] + ", how we " + position[9] + 
-                    ", no matter how the story changes we love each other. Our love is not in our bodies" +
-                    " nor in our circumstance. Our love is not made in our emotions, not in our children, nor in our "
-                    + position [10] + ". Our love is in the story we create together, our eyes always" +
-                    " finding each other-- looking and looking and looking at one another until together," +
-                    " we have lived every life in the other's infinite gaze."
-
-
-</script>
+    </script>
 </body>
 </html>

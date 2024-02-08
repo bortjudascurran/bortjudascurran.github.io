@@ -1,0 +1,26 @@
+body{
+    background-color:forestgreen;
+}
+
+.text-white{
+    color:white;
+    font-family: monospace;
+    width:50%
+}
+.text-black{
+    color:black;
+    font-family: monospace;
+    width:50%
+}
+.background-black{
+    transition-property:background-color;
+    transition-duration: .5s;
+    transition-timing-function: ease-in;
+    background-color: black;
+}
+.background-white{
+    transition-property:background-color;
+    transition-duration: .5s;
+    transition-timing-function: ease-in;
+    background-color: white;
+}
