@@ -2,7 +2,6 @@ body{
     background-color:forestgreen;
 }
 a{
-    
     background-color: lime;
 }
 a:hover{
@@ -16,17 +15,37 @@ h1{
     display: flex;
     /*this allows the game panel and text to exist side by side because they are both contained within a box that resizes according to display width, it is important for the game panel to come second in the html so that it is left-aligned*/
 }
+.panels{
+    width: 25%;
+    margin: 30px;
+}
 .game-panel{
-    position: sticky;
+    position: fixed;
     top: 1%;
-    border: 10px solid gray;
+    right: 0%;
+    width:20%;
+    height:75%;
     padding: 20px;
+    margin: 20px;
+    border: 5px solid rgb(95, 95, 95);
     background-color: rgb(138, 138, 138);
-    width:30%;
-    height:700px;
-    margin-left:20px;
     font-family: monospace;
     overflow: scroll;
+}
+.bottomright{
+    position: fixed;
+    top: 85%;
+    right: 0%;
+    width:20%;
+    height:5%;
+    padding: 20px;
+    margin: 20px;
+    border: 5px solid rgb(95, 95, 95);
+    overflow: scroll;
+    text-align: center;
+    background-color: black;
+    color: aqua;
+    font-family: monospace;
 }
 .game-image{
     display: block;
@@ -55,6 +74,8 @@ h1{
     width:70%;
     height:70%;
     line-height:30px;
+    transition-property:color;
+    transition-duration: .5s;
 }
 .text-black{
     color:black;
@@ -62,6 +83,36 @@ h1{
     width:70%;
     height:70%;
     line-height:30px;
+    transition-property:color;
+    transition-duration: .5s;
+}
+.text-essay{
+    color:black;
+    font-family: 'Times New Roman', Times, serif;
+    width:70%;
+    height:70%;
+    line-height:30px;
+    text-indent: 30px;
+    transition-property:color;
+    transition-duration: .5s;
+}
+.text-pink{
+    color:pink;
+    font-family: monospace;
+    width:70%;
+    height:70%;
+    line-height:30px;
+    transition-property:color;
+    transition-duration: .5s;
+}
+.text-aqua{
+    color:aquamarine;
+    font-family: monospace;
+    width:70%;
+    height:70%;
+    line-height:30px;
+    transition-property:color;
+    transition-duration: .5s;
 }
 .background-black{
     transition-property:background-color;
@@ -74,4 +125,78 @@ h1{
     transition-duration: .5s;
     transition-timing-function: ease-in;
     background-color: white;
+}
+.background-pink{
+    transition-property:background-color;
+    transition-duration: .5s;
+    transition-timing-function: ease-in;
+    background-color: magenta;
+}
+.background-aqua{
+    transition-property:background-color;
+    transition-duration: .5s;
+    transition-timing-function: ease-in;
+    background-color: teal;
+}
+.background-red{
+    transition-property:background-color;
+    transition-duration: .5s;
+    transition-timing-function: ease-in;
+    background-color: magenta;
+}
+.background-yellow{
+    transition-property:background-color;
+    transition-duration: .5s;
+    transition-timing-function: ease-in;
+    background-color: yellow;
+}
+.background-blue{
+    transition-property:background-color;
+    transition-duration: .5s;
+    transition-timing-function: ease-in;
+    background-color: cyan;
+}
+.level25{
+    display: none;
+    font-family: 'Times New Roman';
+    color: black;
+    background-color: white;
+    padding: 20px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 10%;
+    margin-right: 20%;
+}
+.level50{
+    display: none;
+    font-family: 'Times New Roman';
+    color: black;
+    background-color: white;
+    padding: 20px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 10%;
+    margin-right: 20%;
+}
+.level75{
+    display: none;
+    font-family: 'Times New Roman';
+    color: black;
+    background-color: white;
+    padding: 20px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 10%;
+    margin-right: 20%;
+}
+.level100{
+    display: none;
+    font-family: 'Times New Roman';
+    color: black;
+    background-color: white;
+    padding: 20px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 10%;
+    margin-right: 20%;
 }
