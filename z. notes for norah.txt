@@ -1,0 +1,3 @@
+revise bio individual meaning, not only used for cisloaded individuals!
+
+paintbox feature for new limb to gesticulate with, new color to paint with

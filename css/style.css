@@ -1,5 +1,5 @@
 body{
-    background-color:forestgreen;
+    background-color:rgb(129, 237, 191);
 }
 a{
     background-color: lime;
@@ -31,6 +31,30 @@ h1{
     background-color: rgb(138, 138, 138);
     font-family: monospace;
     overflow: scroll;
+}
+.reflect-panel{
+    position: fixed;
+    top: 1%;
+    right: 0%;
+    width:20%;
+    height:90%;
+    padding: 20px;
+    margin: 20px;
+    color:rgb(129, 237, 191);
+    border: 5px solid rgb(1, 189, 107);
+    background-color: rgb(0, 144, 82);
+    font-family: monospace;
+    overflow: scroll;
+}
+.reflect-image{
+    display: block;
+    /*prevents other things from existing on the same line/plane*/
+    border: 4px solid rgb(1, 189, 107);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 90%;
 }
 .bottomright{
     position: fixed;
@@ -89,6 +113,16 @@ h1{
 .text-essay{
     color:black;
     font-family: 'Times New Roman', Times, serif;
+    width:70%;
+    height:70%;
+    line-height:30px;
+    text-indent: 30px;
+    transition-property:color;
+    transition-duration: .5s;
+}
+.text-reflects{
+    color:rgb(0, 0, 0);
+    font-family: 'Courier New';
     width:70%;
     height:70%;
     line-height:30px;
@@ -199,4 +233,11 @@ h1{
     margin-bottom: 2%;
     margin-left: 10%;
     margin-right: 20%;
+}
+.block-quote{
+    margin-left: 20%;
+    margin-right: 20%;
+    display: block;
+    line-height: normal;
+    text-indent: 0%;
 }
